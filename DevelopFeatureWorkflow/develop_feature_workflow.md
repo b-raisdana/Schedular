@@ -1,17 +1,3 @@
-# محیط یکپارچه ویرایش دیاگرام
-
-## در pycharm
-
-![](./pycharm.png)
-
-## در VSCode
-
-![](./vscode.png)
-
-## Github.dev
-
-![](./github.dev.png)
-
 # گردش کار ساخت سرویس اسکجولر
 
 ## تعریف نیازمندی توسط معمار سیستم
@@ -81,8 +67,25 @@
 | Implement | CODE     | Programmer                                       | اگر سودوکد قابل پیاده سازی نباشد، لازم است با تأیید دولاپر تغییر داده بشود تا در کدریویو عدم انطباق تشخیص داده نشود.                                                                                                                                                                                                                                                                                                                                                       |
 | Implement | REV      | Developer<br>Peer Programmer<br>System Architect | ریویو بر اساس چک لیست حداقل شامل <br>* انطباق با سودوکد <br>* تستهای بهیورال پاس بشوند <br>* تست MyPy و لینتر                                                                                                                                                                                                                                                                                                                                                              |
 
-## ایجاد تسک برای ایشیو
+[//]: # (## ایجاد تسک برای ایشیو)
 
-اکسپتنس کرایتریا به فرمت Regeneration Condition و Expected Behavior وCurrent Behavior
+[//]: # ()
+[//]: # (اکسپتنس کرایتریا به فرمت Regeneration Condition و Expected Behavior وCurrent Behavior)
 
-فلو و سودوکد لازم ندارد.
+[//]: # ()
+[//]: # (فلو و سودوکد لازم ندارد.)
+
+# محیط یکپارچه ویرایش دیاگرام
+
+## در pycharm
+
+![](./pycharm.png)
+
+## در VSCode
+
+![](./vscode.png)
+
+## Github.dev
+
+![](./github.dev.png)
+
