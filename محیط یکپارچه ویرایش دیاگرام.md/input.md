@@ -59,6 +59,8 @@
 
 در فایل [README.md](https://github.com/b-raisdana/Schedular/blob/main/README.md) سرویس نگهداری می شود و تغییرات بعدی در همان محیط IDE/Editor در داخل آن ویرایش می شود و بخشی از کدریوی است.
 
+<!--@include:../README.md-->
+
 می توان Product Owner سروریس های زیرساختی و SDK را  System Architect در نظر گرفت.
 
 هر تسکی که وارد طراحی می شود از لیست Component / Taskها در فایل README.md حذف و لینک README.md بخش مربوطه جایگزین آن می شود تا در سطح ماکزیمم هرچیز فقط یکجا داکیومنت بشود.
