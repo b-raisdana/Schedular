@@ -1,16 +1,16 @@
-# محیط یکپارچه ویرایش دیاگرام
+~~# محیط یکپارچه ویرایش دیاگرام
 
 ## در pycharm
 
-![](./image1.png)
+![](./pycharm.png)
 
 ## در VSCode
 
-![](./image2.png)
+![](./vscode.png)
 
 ## Github.dev
 
-![](./image3.png)
+![](./github.dev.png)
 
 # گردش کار ساخت سرویس اسکجولر
 
@@ -59,13 +59,12 @@
 
 در فایل [README.md](https://github.com/b-raisdana/Schedular/blob/main/README.md) سرویس نگهداری می شود و تغییرات بعدی در همان محیط IDE/Editor در داخل آن ویرایش می شود و بخشی از کدریوی است.
 
-<!--@include:../README.md-->
-
 می توان Product Owner سروریس های زیرساختی و SDK را  System Architect در نظر گرفت.
 
 هر تسکی که وارد طراحی می شود از لیست Component / Taskها در فایل README.md حذف و لینک README.md بخش مربوطه جایگزین آن می شود تا در سطح ماکزیمم هرچیز فقط یکجا داکیومنت بشود.
 
 مثلا وقتی طراحی اولین Task در Services شروع می شود تسکهای زیر Services به فایل README.md مربوطه منتقل می شود و لینک آن جایگزین توضیحات می شود. مانند ```[Python: لایبراری اتصال در پایتون](Client/Python/README.md)``` که جایگزین اکتیویتی های کلاینت شده است.
+![img.png](img.png)
 
 ## ایجاد Taskها توسط دولاپر
 
