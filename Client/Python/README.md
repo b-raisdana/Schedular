@@ -1,3 +1,29 @@
+<!-- TOC -->
+
+* [Schedular Client for Python](#schedular-client-for-python)
+* [Installation and Getting Started Guide](#installation-and-getting-started-guide)
+    * [add to requirements](#add-to-requirements)
+    * [using pip](#using-pip)
+    * [importing](#importing)
+    * [create schedular handler](#create-schedular-handler)
+* [Usage](#usage)
+    * [br_sdk.Scheduler.add_task](#br_sdkscheduleradd_task)
+* [Base Classes](#base-classes)
+    * [br_sdk.Scheduler.Schedule](#br_sdkschedulerschedule)
+        * [Parameters](#parameters)
+        * [Examples](#examples)
+    * [br_sdk.Scheduler.Crontab](#br_sdkschedulercrontab)
+        * [Parameters](#parameters-1)
+        * [Examples](#examples-1)
+* [معماری پیاده سازی](#معماری-پیاده-سازی)
+* [Contributor Guidelines](#contributor-guidelines)
+* [Code of Conduct](#code-of-conduct)
+* [API Documentation](#api-documentation)
+* [Release Notes](#release-notes)
+* [Upgrade plan](#upgrade-plan)
+
+<!-- TOC -->
+
 # Schedular Client for Python
 
 یک سیستم اسکجولر که بتواند حالت های بسیار فلکسیبلی از تقویم زمانبندی را ایجاد نماید. زمانبندیهای مورد نظر شامل:
@@ -20,6 +46,13 @@
 
 وظایف اسکجول شده لازم است در صورت فیل شدن داکر و بازیابی خودکار توسط اینفرااستراکچر داکر/کوبرنتیز به صورت خودکار بازیابی
 گردد.
+
+# Topology
+
+![SampleDrawing.drawio.3.drawio.png](../../SampleDrawing.drawio.3.drawio.png)
+این فایل گرافیکی از نوع PNGاست اما در draw.io به شکل جالبی قابل مودیفای کردن است.
+
+این فایل با Google Docs و REAME.md و GitHub و Confluence و ... به خوبی اینگریت می شود.
 
 # Installation and Getting Started Guide
 
@@ -88,6 +121,37 @@ requester_signature: '703862f5d0ee949ef9fc97c4be2dc6f5',
 
 in the above example we are creating ...
 
+## br_sdk.Scheduler.add_task
+
+schedule task through REST API
+
+```python
+from br_sdk.Scheduler import Schedule, Crontab, task, TaskMthods
+from datetime import timedelta
+
+task(
+    uri='https://example.com/api/1.0.0/delete_user_transient_data',
+    parameters={
+        'user_id': '012345679abcdef012345679abcdef',
+    },
+    method=TaskMthods.GET,
+    schedule=[
+        # - هر 10 روز و 3 ساعت یک بار
+        Crontab(timedelta=timedelta(days=10, hours=3)),
+        # - پنجشنبه ها ساعت 17:00 
+        Crontab(day_of_week=3, hour=17),
+        # - شنبه ها ساعت 4:00 
+        Crontab(day_of_week=5, hour=4),
+        # - روز سوم هر ماه (تاریخ 3) و ساعت 15:00
+        Crontab(day_of_month=3, hour=15),
+    ],
+    requester_id: 'abcdef012345679abcdef012345679',
+requester_signature: '703862f5d0ee949ef9fc97c4be2dc6f5',
+)
+```
+
+in the above example we are creating ...
+
 # Base Classes
 
 ## br_sdk.Scheduler.Schedule
@@ -98,7 +162,9 @@ parameter: [float, List[float], Crontab, List[Crontab]]
 
 )
 ```
+
 ### Parameters
+
 ...
 
 ### Examples:
@@ -121,7 +187,9 @@ schedule2 = Schedule([Crontab(...), Crontab(...), Crontab(...)])  # combination 
 
 ```python
 class br_sdk.Scheduler.Crontab(
-minute: str = '*', hour: str = '*', day_of_week: str = '*', day_of_month: str = '*', month_of_year: str = '*'
+minute: str = '*', hour
+
+: str = '*', day_of_week: str = '*', day_of_month: str = '*', month_of_year: str = '*'
 )
 ```
 
@@ -230,13 +298,6 @@ crontab_schedule = Crontab(
 ) 
 ```
 
-# معماری پیاده سازی
-
-![SampleDrawing.drawio.3.drawio.png](SampleDrawing.drawio.3.drawio.png)
-این فایل گرافیکی از نوع PNGاست اما در draw.io به شکل جالبی قابل مودیفای کردن است.
-
-این فایل با Google Docs و REAME.md و GitHub و Confluence و ... به خوبی اینگریت می شود.
-
 # Contributor Guidelines
 
 # Code of Conduct
@@ -247,4 +308,3 @@ crontab_schedule = Crontab(
 
 # Upgrade plan
 
-#        

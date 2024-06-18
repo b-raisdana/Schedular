@@ -1,6 +1,6 @@
 # Design Factors
 
-[User Story: can being linked to Jira, Confluence, and ...](UserStory.md)
+[User Story: BL-0123456 can being linked to Jira, Confluence, and ...](UserStory.md)
 
 ## Functionality
 
@@ -83,9 +83,7 @@
 # Components (Tasks)
 
 * Client libraries:
-  * [Python: لایبراری اتصال در پایتون](./Clients/Python/README.md) 
+  * [Python: لایبراری اتصال در پایتون](Client/Python/README.md) 
 
-* Service-side activities:
-  * /api/Scheduler/task(same as /RabbitMQ/Scheduler/scheduled_task_request_consumer)
-  * /RabbitMQ/Scheduler/scheduled_task_request_consumer(uri: str, parameters: str(JSON({name: str -> value: Any})),
-    method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+* Service:
+  * [Service](Service/README.md)
