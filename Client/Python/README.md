@@ -1,6 +1,12 @@
+## Table of content
+
+<details>
+<summary>Expand ToC</summary>
+
 <!-- TOC -->
 
 * [Schedular Client for Python](#schedular-client-for-python)
+* [Topology](#topology)
 * [Installation and Getting Started Guide](#installation-and-getting-started-guide)
     * [add to requirements](#add-to-requirements)
     * [using pip](#using-pip)
@@ -8,14 +14,14 @@
     * [create schedular handler](#create-schedular-handler)
 * [Usage](#usage)
     * [br_sdk.Scheduler.add_task](#br_sdkscheduleradd_task)
+    * [br_sdk.Scheduler.add_task](#br_sdkscheduleradd_task-1)
 * [Base Classes](#base-classes)
     * [br_sdk.Scheduler.Schedule](#br_sdkschedulerschedule)
         * [Parameters](#parameters)
-        * [Examples](#examples)
+        * [Examples:](#examples)
     * [br_sdk.Scheduler.Crontab](#br_sdkschedulercrontab)
         * [Parameters](#parameters-1)
         * [Examples](#examples-1)
-* [معماری پیاده سازی](#معماری-پیاده-سازی)
 * [Contributor Guidelines](#contributor-guidelines)
 * [Code of Conduct](#code-of-conduct)
 * [API Documentation](#api-documentation)
@@ -24,28 +30,11 @@
 
 <!-- TOC -->
 
+</details>
+
 # Schedular Client for Python
 
-یک سیستم اسکجولر که بتواند حالت های بسیار فلکسیبلی از تقویم زمانبندی را ایجاد نماید. زمانبندیهای مورد نظر شامل:
-
-- هر 10 روز و 3 ساعت یک بار
-- پنجشنبه ها ساعت 17:00
-- شنبه ها ساعت 4:00
-- روز سوم هر ماه (تاریخ 3) و ساعت 15:00
-- ترکیب این موارد با هم
-
-اسکجولر لازم است قادر باشد در یک زمان از قبل تعیین شده، با فاصله زمانی حداکثر یک سال، یک وظیفه محوله را اجرا نماید.
-وظیفه در قالب یک فانکشن یا API است که لازم است به صورت پارامتریک و با قابلیت ارسال پارامترهای متغیر فانکشن یا API برای
-اسکجولر قابل تعریف کردن باشد.
-
-قابلیت لازم است به نحوی پیاده سازی شود که برای سرویس های موجود مبتنی بر Python و C++ و C# قابل استفاده باشد. قابلیت لازم
-است در ساده ترین حالت ممکن در سرویس های موجود قابل استفاده باشد.
-
-ایجاد یک کانال دسترسی به سرویس که در تمامی پلتفرمهای استفاده کننده قابل استفاده باشد، مانند Message Queue یا API یا ...
-قابل استفاده است.
-
-وظایف اسکجول شده لازم است در صورت فیل شدن داکر و بازیابی خودکار توسط اینفرااستراکچر داکر/کوبرنتیز به صورت خودکار بازیابی
-گردد.
+کلاینت استفاده از [اسکجوبر](../../README.md) در پایتون.
 
 # Topology
 
