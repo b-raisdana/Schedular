@@ -74,7 +74,7 @@
 
 # High-level Topology
 
-[//]: # todo 1()
+[//]: # (todo 1)
 [//todo]: ()
 ![SampleDrawing.drawio.3.drawio.png](SampleDrawing.drawio.3.drawio.png)
 این فایل گرافیکی از نوع PNGاست اما در draw.io به شکل جالبی قابل مودیفای کردن است.
