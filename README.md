@@ -94,29 +94,28 @@
 * schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
 #### responses:
 * 201 - Success
-    * ProjectX.ApiGateway.Facade.ResponseModel`
-      1[[ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel, ProjectX.ResourceContext.Facade.Contract, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null]]{
-      * values ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel{
-          * id: string($uuid)
-          * name: string
+  * ProjectX.ApiGateway.Facade.ResponseModel
+    * ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel
+      * id: string($uuid)
+      * name: string
+      * nullable: true
+      * description: string
+      * nullable: true
+      * isDefault: boolean
+      * totalSlaCount: integer($int32)
+      * created: string($date-time)
+      * updated: string($date-time)
+      * nullable: boolean
+      * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+        * id string($uuid)
+        * username string
+        * nullable: true
+        * isEnabled boolean
+        * updater ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+          * id string($uuid)
+          * username	string
           * nullable: true
-          * description: string
-          * nullable: true
-          * isDefault: boolean
-          * totalSlaCount: integer($int32)
-          * created: string($date-time)
-          * updated: string($date-time)
-          * nullable: boolean
-          * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
-              * id string($uuid)
-              * username string
-              * nullable: true
-              * isEnabled boolean
-              * updater ProjectX.ResourceContext.Facade.Contract.ReadUserModel
-                * id string($uuid)
-                * username	string
-                * nullable: true
-                * isEnabled	boolean
+          * isEnabled	boolean
 * 400 - Bad Request
   * Microsoft.AspNetCore.Mvc.ProblemDetails
     * type	string
@@ -129,6 +128,12 @@
     * nullable: true
     * instance	string
     * nullable: true
-* /api/Scheduler/task(same as /RabbitMQ/Scheduler/scheduled_task_request_consumer)
-* /RabbitMQ/Scheduler/scheduled_task_request_consumer(uri: str, parameters: str(JSON({name: str -> value: Any})),
-  method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+### /api/Scheduler/task
+same as [/RabbitMQ/Scheduler/scheduled_task_request_consumer](###/rabbitmq/scheduler/scheduled_task_request_consumer)
+### /RabbitMQ/Scheduler/scheduled_task_request_consumer {}
+* uri: str, 
+* parameters: str(JSON({name: str -> value: Any})),
+* method:[‘GET’ | ‘POST’], 
+* schedule:  (Crontab | [Crontab]), 
+* requester_id: uuid, 
+* requester_signature: str(MD5))
