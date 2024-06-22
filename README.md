@@ -74,24 +74,23 @@
 
 # High-level Topology
 
-[//]: # (todo 1)
-[//todo]: ()
-![SampleDrawing.drawio.3.drawio.png](SampleDrawing.drawio.3.drawio.png)
+[//]: # (todo: make to topology digram simpler and limitted to major components and include the protocols.)
+![SampleDrawing.drawio.3.drawio.png](Schedular.Topology.drawio.png)
 این فایل گرافیکی از نوع PNGاست اما در draw.io به شکل جالبی قابل مودیفای کردن است.
 
 این فایل با Google Docs و README.md و GitHub و Confluence و ... به خوبی اینگریت می شود.
 
-
 # Components (Tasks)
 
 * Client libraries:
-  * [Python: لایبراری اتصال در پایتون](Client/Python/README.md) 
+    * [Python: لایبراری اتصال در پایتون](Client/Python/README.md)
 
 * Service:
 
-[//]: # todo: change the format of endpoint documentation to the swagger schema format ()
-  * /api/Scheduler/task(uri: str, parameters: str(JSON({name: str -> value: Any})),
-    method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
-  * /api/Scheduler/task(same as /RabbitMQ/Scheduler/scheduled_task_request_consumer)
-  * /RabbitMQ/Scheduler/scheduled_task_request_consumer(uri: str, parameters: str(JSON({name: str -> value: Any})),
-    method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+[//]: # (todo: change the format of endpoint documentation to the swagger schema format)
+
+* /api/Scheduler/task(uri: str, parameters: str(JSON({name: str -> value: Any})),
+  method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+* /api/Scheduler/task(same as /RabbitMQ/Scheduler/scheduled_task_request_consumer)
+* /RabbitMQ/Scheduler/scheduled_task_request_consumer(uri: str, parameters: str(JSON({name: str -> value: Any})),
+  method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
