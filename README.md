@@ -74,7 +74,6 @@
 
 # High-level Topology
 
-[//]: # (todo: make to topology digram simpler and limitted to major components and include the protocols.)
 ![SampleDrawing.drawio.3.drawio.png](Schedular.Topology.drawio.png)
 این فایل گرافیکی از نوع PNGاست اما در draw.io به شکل جالبی قابل مودیفای کردن است.
 
@@ -85,12 +84,51 @@
 * Client libraries:
     * [Python: لایبراری اتصال در پایتون](Client/Python/README.md)
 
-* Service:
+## Service:
 
-[//]: # (todo: change the format of endpoint documentation to the swagger schema format)
-
-* /api/Scheduler/task(uri: str, parameters: str(JSON({name: str -> value: Any})),
-  method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+### /api/Scheduler/task
+#### input parameters
+* uri: str,
+* parameters: str(JSON({name: str -> value: Any})),
+* method:[‘GET’ | ‘POST’],
+* schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+#### responses:
+* 201 - Success
+    * ProjectX.ApiGateway.Facade.ResponseModel`
+      1[[ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel, ProjectX.ResourceContext.Facade.Contract, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null]]{
+      * values ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel{
+          * id: string($uuid)
+          * name: string
+          * nullable: true
+          * description: string
+          * nullable: true
+          * isDefault: boolean
+          * totalSlaCount: integer($int32)
+          * created: string($date-time)
+          * updated: string($date-time)
+          * nullable: boolean
+          * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+              * id string($uuid)
+              * username string
+              * nullable: true
+              * isEnabled boolean
+              * updater ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+                * id string($uuid)
+                * username	string
+                * nullable: true
+                * isEnabled	boolean
+* 400 - Bad Request
+  * Microsoft.AspNetCore.Mvc.ProblemDetails
+    * type	string
+    * nullable: true
+    * title	string
+    * nullable: true
+    * status	integer($int32)
+    * nullable: true
+    * detail	string
+    * nullable: true
+    * instance	string
+    * nullable: true
 * /api/Scheduler/task(same as /RabbitMQ/Scheduler/scheduled_task_request_consumer)
 * /RabbitMQ/Scheduler/scheduled_task_request_consumer(uri: str, parameters: str(JSON({name: str -> value: Any})),
   method:[‘GET’ | ‘POST’], schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
