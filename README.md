@@ -81,59 +81,63 @@
 
 # Components (Tasks)
 
-* Client libraries:
-    * [Python: لایبراری اتصال در پایتون](Client/Python/README.md)
+## Client libraries:
+* [Python: لایبراری اتصال در پایتون](Client/Python/README.md)
 
 ## Service:
 
-### /api/Scheduler/task
-#### input parameters
-* uri: str,
-* parameters: str(JSON({name: str -> value: Any})),
-* method:[‘GET’ | ‘POST’],
-* schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
-#### responses:
-* 201 - Success
-  * ProjectX.ApiGateway.Facade.ResponseModel
-    * ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel
-      * id: string($uuid)
-      * name: string
-      * nullable: true
-      * description: string
-      * nullable: true
-      * isDefault: boolean
-      * totalSlaCount: integer($int32)
-      * created: string($date-time)
-      * updated: string($date-time)
-      * nullable: boolean
-      * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
-        * id string($uuid)
-        * username string
+<details><summary> /api/Scheduler/task </summary>
+
+* input parameters
+  * uri: str,
+  * parameters: str(JSON({name: str -> value: Any})),
+  * method:[‘GET’ | ‘POST’],
+  * schedule:  (Crontab | [Crontab]), requester_id: uuid, requester_signature: str(MD5))
+* responses:
+  * 201 - Success
+    * ProjectX.ApiGateway.Facade.ResponseModel
+      * ProjectX.ResourceContext.Facade.Contract.CalendarProfiles.Models.ReadCalendarProfileModel
+        * id: string($uuid)
+        * name: string
         * nullable: true
-        * isEnabled boolean
-        * updater ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+        * description: string
+        * nullable: true
+        * isDefault: boolean
+        * totalSlaCount: integer($int32)
+        * created: string($date-time)
+        * updated: string($date-time)
+        * nullable: boolean
+        * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
           * id string($uuid)
-          * username	string
+          * username string
           * nullable: true
-          * isEnabled	boolean
-* 400 - Bad Request
-  * Microsoft.AspNetCore.Mvc.ProblemDetails
-    * type	string
-    * nullable: true
-    * title	string
-    * nullable: true
-    * status	integer($int32)
-    * nullable: true
-    * detail	string
-    * nullable: true
-    * instance	string
-    * nullable: true
-### /api/Scheduler/task
-same as [/RabbitMQ/Scheduler/scheduled_task_request_consumer](###/rabbitmq/scheduler/scheduled_task_request_consumer)
-### /RabbitMQ/Scheduler/scheduled_task_request_consumer {}
+          * isEnabled boolean
+          * updater ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+            * id string($uuid)
+            * username	string
+            * nullable: true
+            * isEnabled	boolean
+  * 400 - Bad Request
+    * Microsoft.AspNetCore.Mvc.ProblemDetails
+      * type	string
+      * nullable: true
+      * title	string
+      * nullable: true
+      * status	integer($int32)
+      * nullable: true
+      * detail	string
+      * nullable: true
+      * instance	string
+      * nullable: true
+
+</details>
+
+### /RabbitMQ/Scheduler/scheduled_task_request_consumer {#rabbitmq}
 * uri: str, 
 * parameters: str(JSON({name: str -> value: Any})),
 * method:[‘GET’ | ‘POST’], 
 * schedule:  (Crontab | [Crontab]), 
 * requester_id: uuid, 
 * requester_signature: str(MD5))
+
+## Service Schemas 
