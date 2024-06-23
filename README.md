@@ -107,7 +107,7 @@
         * created: string($date-time)
         * updated: string($date-time)
         * nullable: boolean
-        * creator ProjectX.ResourceContext.Facade.Contract.ReadUserModel
+        * creator ProjectX.ResourceContext.Facadwe.Contract.ReadUserModel
           * id string($uuid)
           * username string
           * nullable: true
