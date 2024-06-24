@@ -84,10 +84,10 @@ Schedular(uri='111.111.111.111')
 schedule task through REST API
 
 ```python
-from br_sdk.Scheduler import Schedule, Crontab, task, TaskMthods
+from br_sdk.Scheduler import Schedule, Crontab, Task, TaskMthods
 from datetime import timedelta
 
-task(
+task = new Task(
     uri='https://example.com/api/1.0.0/delete_user_transient_data',
     parameters={
         'user_id': '012345679abcdef012345679abcdef',
@@ -104,8 +104,8 @@ task(
         Crontab(day_of_month=3, hour=15),
     ],
     requester_id: 'abcdef012345679abcdef012345679',
-requester_signature: '703862f5d0ee949ef9fc97c4be2dc6f5',
-)
+    requester_signature: '703862f5d0ee949ef9fc97c4be2dc6f5',
+    )
 ```
 
 in the above example we are creating ...
